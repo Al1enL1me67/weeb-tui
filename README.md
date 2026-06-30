@@ -55,7 +55,7 @@ Both sides share the same image renderer, which supports Kitty, iTerm2, Sixel, a
 weeb-tui
 
 # jump straight into a search
-weeb-tui -q "Boku no pico"
+weeb-tui -q "Death Note"
 
 # check for a newer release
 weeb-tui --check-update
