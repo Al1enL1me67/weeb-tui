@@ -1,0 +1,80 @@
+[package]
+name = "weeb-tui"
+version = "4.0.0"
+edition = "2021"
+authors = ["silent9669 <dev@silent9669.com>"]
+description = "Netflix-inspired TUI for anime and manga streaming"
+license = "MIT"
+repository = "https://github.com/silent9669/weeb-tui"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# TUI framework
+crossterm = "0.27"
+ratatui = "0.24"
+
+# Image support (using external chafa tool for cross-platform image rendering)
+image = { version = "0.24", default-features = false, features = ["png", "jpeg"] }
+
+# HTTP client
+reqwest = { version = "0.11", features = ["json", "cookies"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# Database
+rusqlite = { version = "0.30", features = ["bundled"] }
+
+# Configuration directories
+directories = "5.0"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# CLI arguments
+clap = { version = "4.4", features = ["derive"] }
+
+# Async traits
+async-trait = "0.1"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+url = { version = "2.5", features = ["serde"] }
+regex = "1.10"
+bytes = "1"
+
+# HTML scraping for manga providers (weebcentral, mangapill)
+scraper = "0.20"
+
+# LRU cache
+lru = "0.12"
+
+# Image encoding
+base64 = "0.22"
+
+# Self-update support
+self_update = { version = "0.43", features = ["archive-tar", "archive-zip", "compression-flate2"] }
+semver = "1.0"
+
+# Crypto for AllAnime decryption
+aes = "0.8"
+ctr = "0.9"
+sha2 = "0.10"
+
+# Installer utilities
+indicatif = "0.17"
+dialoguer = "0.11"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true

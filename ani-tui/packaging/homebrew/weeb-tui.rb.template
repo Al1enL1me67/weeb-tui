@@ -1,0 +1,29 @@
+class WeebTui < Formula
+  desc "TUI for anime and manga streaming"
+  homepage "https://github.com/silent9669/weeb-tui"
+  url "<%= url %>"
+<%- unless url.include?(version_without_v) -%>
+  version "<%= version_without_v %>"
+<%- end -%>
+  sha256 "<%= sha256 %>"
+  license "MIT"
+  head "https://github.com/silent9669/weeb-tui.git", branch: "main"
+
+  depends_on "pkgconf" => :build
+  depends_on "rust" => :build
+  depends_on "chafa"
+  depends_on "mpv"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
+
+  def install
+    system "cargo", "install", *std_cargo_args
+  end
+
+  test do
+    assert_match "weeb-tui", shell_output("#{bin}/weeb-tui --help")
+    assert_match version.to_s, shell_output("#{bin}/weeb-tui --version")
+  end
+end

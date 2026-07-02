@@ -1,0 +1,45 @@
+{
+    "version": "4.0.0",
+    "description": "TUI for anime and manga streaming",
+    "homepage": "https://github.com/silent9669/weeb-tui",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/silent9669/weeb-tui/releases/download/v4.0.0/weeb-tui-windows-x86_64.zip",
+            "hash": "PLACEHOLDER_SHA256"
+        }
+    },
+    "bin": "weeb-tui.exe",
+    "depends": [
+        "chafa",
+        "mpv"
+    ],
+    "suggest": {
+        "scoop-completion": [
+            "scoop-completion"
+        ]
+    },
+    "notes": [
+        "weeb-tui has been installed!",
+        "",
+        "Usage:",
+        "  weeb-tui              # Start the app",
+        "  weeb-tui -q 'naruto'  # Search immediately",
+        "",
+        "Press m to toggle anime <-> manga mode.",
+        "Run 'weeb-tui --help' for more options."
+    ],
+    "checkver": {
+        "github": "https://github.com/silent9669/weeb-tui"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/silent9669/weeb-tui/releases/download/v$version/weeb-tui-windows-x86_64.zip",
+                "hash": {
+                    "url": "$url.sha256"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Application data
+*.db
+*.db-journal
+
+# Config (don't commit personal configs)
+config.toml
+
+# Development/Agent files
+.agent/
+.opencode/
+.ruff_cache/
+.venv/
+AGENTS.md
+
+daytona
+daytona.yaml
+# Ignore sensitive and temp directories
+.gemini/
+.obsidian/
+GEMINI.md
+ani-cli-temp/
