@@ -1,4 +1,4 @@
-# weeb-tui
+# weeb-tui (deprecated)
 
 A Netflix-style TUI for watching anime and reading manga, all from the terminal. One binary, two halves glued together.
 
